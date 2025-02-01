@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'; // Add this import
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class HelloWorldService {
 
   constructor(private client: HttpClient) {}
 
-  getHelloWorld():Observable<any> {
+  getHelloWorld(): Observable<any> {
     return this.client.get(this.apiUrl);
   }
 }
