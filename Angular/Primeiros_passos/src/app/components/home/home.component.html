@@ -1,0 +1,42 @@
+<main>
+    <app-footer></app-footer>
+
+    <input type="text" placeholder="Digite seu nome" [(ngModel)]="name" />  
+    
+    <br>
+
+    <p>{{ name }}</p>
+    <p>Contador: {{ count() }}</p>
+    <button (click)="ClickButton()">Exibir nome</button>
+
+    <button (click)="this.valueBool = !this.valueBool" style="margin-left: 10px;">Troca valor booleano</button>
+
+    @if(valueBool){
+        <h1>Valor verdadeiro</h1>
+    } @else if (name == "Pedro") {
+        <h1>Nome é Pedro</h1>
+    } @else {
+        <h1>Valor falso</h1>
+    }
+
+    <h1 *ngIf="valueBool">Valor verdadeiro com if do angular antigo</h1>
+
+    @for (nome of lista; track $index) {
+        <p>{{ nome }}</p>
+    } @empty {
+        <p>Não há nomes na lista</p>
+    }
+
+    <!-- <div *ngFor="let nome of lista">
+        <p>{{ nome }}</p>
+    </div>
+    <p *ngIf="lista.length == 0">Não há nomes na lista</p> -->
+
+    <h1>{{ minhaPropsDeFora }}</h1>
+
+    <br>
+    <br>
+    <br>
+    
+    <img [src]="src_img" alt="capivara" />
+</main>
