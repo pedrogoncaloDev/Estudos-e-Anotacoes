@@ -29,6 +29,7 @@ git merge --abort = abortar o merge
 COMANDOS:
 git config --global user.email "you@example.com" =  definir o email que mostrará nos commits
 git config --global user.name "Pedro Henrique..." = definir o nome do autor do commit
+git config --global --list = mostra o nome e email configurados no git
 
 DEFINIR LINK DO PROJETO
 git remote add origin https://githug.com/...
