@@ -1,4 +1,4 @@
-# Estudos Angular
+# Estudos-Angular
 Pasta com meus estudos e cursos sobre Angular
 
 ## Referências
