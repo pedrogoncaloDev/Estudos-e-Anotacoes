@@ -1,3 +1,9 @@
+INSTALANDO ANGULAR/CLI -> 
+    npm install -g @angular/cli
+
+CRIANDO NOVO PROJETO VIA TERMINAL -> 
+    ng new
+
 RODAR O PROJETO -> 
     npm run start (localhost:4200)
 
