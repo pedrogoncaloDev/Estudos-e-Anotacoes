@@ -1,0 +1,40 @@
+.main
+  text-align: center
+  padding: 20px
+
+
+strong
+  color: #fff
+
+
+.input-container
+  display: flex
+  justify-content: center
+  margin-bottom: 20px
+
+
+.container
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+  gap: 20px
+  justify-content: center
+
+  & .card
+    background: #00acc1
+    border-radius: 8px
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+    padding: 20px
+    transition: transform 0.3s ease
+    text-align: left
+
+    &:hover
+      transform: translateY(-5px)
+
+    & h2
+      color: #fff
+      margin-bottom: 10px
+
+    & p
+      margin: 5px 0
+      color: #fff
+

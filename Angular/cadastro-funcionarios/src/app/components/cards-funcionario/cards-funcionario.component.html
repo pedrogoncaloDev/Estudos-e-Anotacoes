@@ -1,0 +1,20 @@
+<main class="main">
+  <h1>Lista de Funcionários</h1>
+
+  <div class="input-container">
+    <input type="text" [(ngModel)]="filtro" placeholder="Buscar funcionário..." class="input-filter" />
+  </div>
+
+  <div class="container">
+    @for (funcionario of funcionariosFiltrados(); track funcionario.id) {
+      <div class="card">
+        <h2>{{ funcionario.id }} - {{ funcionario.nome }}</h2>
+        <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
+        <p><strong>Departamento:</strong> {{ funcionario.departamento }}</p>
+        <p><strong>Salário:</strong> R$ {{ funcionario.salario }}</p>
+        <p><strong>Email:</strong> {{ funcionario.email }}</p>
+        <p><strong>Telefone:</strong> {{ funcionario.telefone }}</p>
+      </div>
+    }
+  </div>
+</main>

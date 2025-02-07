@@ -1,0 +1,70 @@
+<main class="main">
+  <h1>CRUD de Funcionários</h1>
+
+  <form id="funcionarioForm">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required placeholder="Digite o nome do funcionário">
+    </div>
+
+    <div class="form-group">
+      <label for="cargo">Cargo:</label>
+      <input type="text" id="cargo" name="cargo" required placeholder="Digite o cargo do funcionário">
+    </div>
+
+    <div class="form-group">
+      <label for="salario">Salário:</label>
+      <input type="number" id="salario" name="salario" required placeholder="Digite o salário do funcionário">
+    </div>
+
+    <div class="form-group">
+      <label for="departamento">Departamento:</label>
+      <input type="text" id="departamento" name="departamento" required placeholder="Digite o departamento">
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required placeholder="Digite o e-mail do funcionário">
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" name="telefone" required placeholder="Digite o telefone do funcionário">
+    </div>
+
+    <button type="submit" id="saveButton">Salvar</button>
+    <button type="button" id="updateButton" style="display:none;">Atualizar</button>
+    <button type="button" id="deleteButton" style="display:none;">Excluir</button>
+  </form>
+
+  <h2>Lista de Funcionários</h2>
+  <table id="funcionarioList">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cargo</th>
+        <th>Salário</th>
+        <th>Departamento</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (funcionario of funcionarios; track funcionario.id) {
+        <tr>
+          <td>{{ funcionario.nome }}</td>
+          <td>{{ funcionario.cargo }}</td>
+          <td>R$ {{ funcionario.salario }}</td>
+          <td>{{ funcionario.departamento }}</td>
+          <td>{{ funcionario.email }}</td>
+          <td>{{ funcionario.telefone }}</td>
+          <td>
+            <button (click)="editarFuncionario(funcionario)">✏️ Editar</button>
+            <button (click)="deletarFuncionario(funcionario.id)">🗑 Excluir</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</main>

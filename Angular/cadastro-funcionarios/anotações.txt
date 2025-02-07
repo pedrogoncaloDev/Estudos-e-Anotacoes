@@ -1,0 +1,5 @@
+Explicação da Estrutura do Akita no Angular
+Akita é um gerenciador de estado para Angular que facilita a manipulação de estados de forma reativa e organizada. Ele funciona com três principais conceitos:
+  -> Store (Armazém de dados) → Onde os dados ficam armazenados.
+  -> Query (Consultas de estado) → Onde acessamos os dados armazenados.
+  -> Service (Serviço de ações) → Onde realizamos ações que alteram o estado.
