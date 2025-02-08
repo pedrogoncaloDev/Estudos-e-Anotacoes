@@ -1,0 +1,5 @@
+INSTALAR ->
+    pip install pyinstaller
+
+GERAR VERSÃO DO EXE ->
+    pyinstaller --onefile divisao_salario.py
