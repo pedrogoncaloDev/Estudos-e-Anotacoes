@@ -21,11 +21,11 @@ def calcular_salario():
     valor_50 = salario_com_desconto * 0.5
     
     print("\nResultados:")
-    print(f"Dízimo: R$ {salario * 0.1:.2f}")
+    print(f"Dízimo (PIC PAY): R$ {salario * 0.1:.2f}")
     print(f"\nSalário com 10% subtraído: R$ {salario_com_desconto:.2f}")
-    print(f"20% do salário com desconto: R$ {valor_20:.2f}")
-    print(f"30% do salário com desconto: R$ {valor_30:.2f}")
-    print(f"50% do salário com desconto: R$ {valor_50:.2f}")
+    print(f"20% do salário com desconto (NEON): R$ {valor_20:.2f}")
+    print(f"30% do salário com desconto (MERCADO PAGO): R$ {valor_30:.2f}")
+    print(f"50% do salário com desconto (ITAÚ): R$ {valor_50:.2f}")
 
 while True:
     calcular_salario()
