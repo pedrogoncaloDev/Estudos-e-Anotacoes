@@ -1,32 +1,60 @@
 .main
-  text-align: center
   padding: 20px
 
-
   .form-group
-  margin-bottom: 15px
+    margin-bottom: 15px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
 
+    label
+      width: 100%
+
+    input
+      margin-top: 5px
+
+h1
+  width: 100%
+  text-align: center
+  margin-bottom: 10px
 
 label
   font-weight: bold
 
-
 input
   width: 100%
   margin-top: 5px
-
 
 button
   padding: 10px 20px
   margin-top: 10px
   cursor: pointer
 
+form
+  border: 1px solid #ddd
+  padding: 10px
+
+button
+  margin-right: 30px
+  font-size: 18px
+  min-width: 125px
 
 #funcionarioList
   width: 100%
   border-collapse: collapse
 
-
 #funcionarioList th, #funcionarioList td
   border: 1px solid #ddd
   padding: 8px
+
+.div-buttons
+  width: 100%
+  display: flex
+  justify-content: center
+
+@media (max-width: 600px)
+  .div-buttons
+    flex-direction: column
+
+  .div-buttons button
+    width: 100%

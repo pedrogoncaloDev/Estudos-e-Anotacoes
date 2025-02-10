@@ -6,7 +6,7 @@
   </div>
 
   <div class="container">
-    @for (funcionario of funcionariosFiltrados(); track funcionario.id) {
+    @for (funcionario of funcionarios; track funcionario.id) {
       <div class="card">
         <h2>{{ funcionario.id }} - {{ funcionario.nome }}</h2>
         <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
@@ -16,5 +16,9 @@
         <p><strong>Telefone:</strong> {{ funcionario.telefone }}</p>
       </div>
     }
+
+    <!-- @if (funcionariosFiltrados().length == 0) {
+      <h3>Nenhum funcionário cadastrado</h3>
+    } -->
   </div>
 </main>
