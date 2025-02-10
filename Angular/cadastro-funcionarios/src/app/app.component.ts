@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CardsFuncionarioComponent } from "./components/cards-funcionario/cards-funcionario.component";
-import { FormCadastroFuncionarioComponent } from "./components/form-cadastro-funcionario/form-cadastro-funcionario.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CardsFuncionarioComponent, FormCadastroFuncionarioComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
