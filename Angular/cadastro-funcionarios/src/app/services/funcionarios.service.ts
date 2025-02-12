@@ -5,7 +5,7 @@ interface Funcionario {
   id: number;
   nome: string;
   cargo: string;
-  salario: number;
+  salario: number | null;
   departamento: string;
   email: string;
   telefone: string;
@@ -34,7 +34,7 @@ export class FuncionariosService {
       telefone: "(11) 99876-5432"
     },
   ])
-  funcionario$ = this.funcionariosSubject .asObservable();
+  funcionario$ = this.funcionariosSubject.asObservable();
 
   constructor() {}
 
@@ -52,10 +52,15 @@ export class FuncionariosService {
   }
 
   addFuncionarios(pFuncionario: Funcionario) {
+    const novoFuncionario:Funcionario = pFuncionario;
+    novoFuncionario.id = this.funcionariosSubject.value.length + 1;
+
     let listaAtualizada = this.funcionariosSubject.value;
-    listaAtualizada.push(pFuncionario);
+    listaAtualizada.push(novoFuncionario);
 
     this.funcionariosSubject.next(listaAtualizada);
+
+    console.log("Adicionado valor");
   }
 
   editFuncionarios(item: any) {

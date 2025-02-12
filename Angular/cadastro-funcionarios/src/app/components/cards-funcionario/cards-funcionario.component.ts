@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop'
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +12,7 @@ interface Funcionario {
   id: number;
   nome: string;
   cargo: string;
-  salario: number;
+  salario: number | null;
   departamento: string;
   email: string;
   telefone: string;
@@ -22,14 +21,14 @@ interface Funcionario {
 @Component({
   selector: 'app-cards-funcionario',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  // imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './cards-funcionario.component.html',
   styleUrl: './cards-funcionario.component.sass'
 })
 
-export class CardsFuncionarioComponent {
+export class CardsFuncionarioComponent implements OnInit {
   funcionarios: Funcionario[] = [];
-  private subscription!: Subscription;
+  protected subscription!: Subscription;
   filtro: string = "";
 
   constructor(private funcionarioService: FuncionariosService) {}
@@ -37,9 +36,9 @@ export class CardsFuncionarioComponent {
   ngOnInit(): void {
     this.subscription = this.funcionarioService.funcionario$.subscribe(lista => {
       this.funcionarios = lista;
-      
+
       console.log("Lista funcionarios", this.funcionarios);
-    })
+    });
   }
 
   onFiltroChange() {

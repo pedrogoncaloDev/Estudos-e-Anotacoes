@@ -1,0 +1,7 @@
+-> Tipos de observables <-
+Observable:
+  Emite valores ao longo do tempo. "Lazy" (não faz nada até alguém se inscrever).
+Subject:
+  Tipo especial de Observable. Multicast (vários observadores recebem os mesmos valores). Permite emitir valores manualmente.
+BehaviorSubject:
+  Tipo especial de Subject. Multicast. Mantém e emite o valor mais recente para novos observadores.

@@ -7,7 +7,7 @@ interface Funcionario {
   id: number;
   nome: string;
   cargo: string;
-  salario: number;
+  salario: number | null;
   departamento: string;
   email: string;
   telefone: string;
@@ -15,7 +15,8 @@ interface Funcionario {
 
 @Component({
   selector: 'app-form-cadastro-funcionario',
-  imports: [CommonModule, FormsModule],
+  standalone: true,
+  // imports: [CommonModule, FormsModule],
   templateUrl: './form-cadastro-funcionario.component.html',
   styleUrls: ['./form-cadastro-funcionario.component.sass']
 })
@@ -25,7 +26,7 @@ export class FormCadastroFuncionarioComponent {
     id: 0,
     nome: '',
     cargo: '',
-    salario: 0,
+    salario: null,
     departamento: '',
     email: '',
     telefone: ''
@@ -34,17 +35,7 @@ export class FormCadastroFuncionarioComponent {
   constructor(private funcionarioServive: FuncionariosService){}
 
   addFuncionario(){
-    const funcionarios = this.funcionarioServive.getFuncionarios();
-
-    if (funcionarios.length > 0) {
-      const lastFuncionario = funcionarios[funcionarios.length - 1];
-      this.funcionarioSelecionado.id = lastFuncionario.id + 1;
-    } else {
-      this.funcionarioSelecionado.id = 1;
-    }
-
     this.funcionarioServive.addFuncionarios(this.funcionarioSelecionado);
-
     this.resetaVariavel();
   }
 
