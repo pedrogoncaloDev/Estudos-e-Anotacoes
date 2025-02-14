@@ -1,47 +1,34 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { FuncionariosService } from '../../services/funcionarios.service';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-
-
-// import { Funcionario } from '../models/funcionario.model';
-
-interface Funcionario {
-  id: number;
-  nome: string;
-  cargo: string;
-  salario: number | null;
-  departamento: string;
-  email: string;
-  telefone: string;
-}
+import { FormsModule } from '@angular/forms'; // ✅ Importa FormsModule
+import { FuncionariosService } from '../../services/funcionarios.service';
+import { Funcionario } from '../../services/funcionarios.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cards-funcionario',
   standalone: true,
-  // imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './cards-funcionario.component.html',
-  styleUrl: './cards-funcionario.component.sass'
+  styleUrls: ['./cards-funcionario.component.sass']
 })
-
-export class CardsFuncionarioComponent implements OnInit {
-  funcionarios: Funcionario[] = [];
-  protected subscription!: Subscription;
+export class CardsFuncionarioComponent implements OnDestroy {
+  cardsFuncionarios: Funcionario[] = [];
+  funcionariosService = inject(FuncionariosService);
+  getFuncionarios$ = this.funcionariosService.getFuncionarios();
+  sub = new Subscription();
   filtro: string = "";
 
-  constructor(private funcionarioService: FuncionariosService) {}
-
-  ngOnInit(): void {
-    this.subscription = this.funcionarioService.funcionario$.subscribe(lista => {
-      this.funcionarios = lista;
-
-      console.log("Lista funcionarios", this.funcionarios);
+  constructor() {
+    const subContador = this.getFuncionarios$.subscribe(value => {
+      this.cardsFuncionarios = value;
+      console.log("VALOR EMITIDO: ", value);
     });
+
+    this.sub.add(subContador);
   }
 
-  onFiltroChange() {
-    this.funcionarioService.filterFuncionarios(this.filtro);
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }
