@@ -1,41 +1,10 @@
 Links:
-- https://www.youtube.com/watch?v=kB5e-gTAl_s&t=602s
-- https://www.youtube.com/watch?v=MdthEusEoy8&ab_channel=DevSuperior
+- Vídeo 1: https://www.youtube.com/watch?v=kB5e-gTAl_s&t=602s
+- Vídeo 2: https://www.youtube.com/watch?v=MdthEusEoy8&ab_channel=DevSuperior
 
 Para usar o git em um projeto basta ir até dentro da pasta, botão direito do mouse e ir em Git Bash Here
 
-PULL REQUEST = solicitação de aprovação do commit
-
-MEXER SÓ COM A BRANCH MAIN (PADRÃO DO GITHUB)
-Só usar o comando --> git checkout -b main
-
-BRANCH(Galho)
-git branch = ver as branch's disponíveis
-git branch "nome da branch (SEM AS ASPAS)"= criar uma nova branch
-git checkout "nome da branch (SEM AS ASPAS)" = mudar de branch
-
-jeito alternativo: git checkout -b "nome da branch nova (SEM AS ASPAS)" "nome da branch base (SEM AS ASPAS)"
-
-GIT IGNORE (geralmente se faz logo no começo na branch master mesmo)
-touch .gitignore
-
-MERGE (Unir o código) Minutos do vídeo = 33:40, exemplo do dia a dia (38:00)
-1° passo: Antes de fazer o merge, entrar na branch para onde será puxada as novas alterações e dar um --> git pull
-2° passo: entrar na branch que vai receber os códigos (caso ainda não esteja lá) com o comando --> git branch "nome da branch para onde os códigos serão puxados (SEM AS ASPAS)"
-3° passo: e usar o comando --> git merge "nome da branch com os códigos que serão puxados (SEM AS ASPAS)"
-
-git merge --abort = abortar o merge
-
 COMANDOS:
-git config --global user.email "you@example.com" =  definir o email que mostrará nos commits
-git config --global user.name "Pedro Henrique..." = definir o nome do autor do commit
-git config --global --list = mostra o nome e email configurados no git
-
-DEFINIR LINK DO PROJETO
-git remote add origin https://githug.com/...
-git push --set-upstream origin master
-
-code = abrir o vs code
 git init = iniciar o git
 touch = criar arquivos
 pwd = exibir caminho da pasta. Exemplo: /c/Users/pedro/OneDrive/Área de Trabalho/teste
@@ -52,7 +21,41 @@ git restore nome do arquivo = desfaz as últimas alterações dele
 git reset --hard "id da versão que quer voltar" -->Exemplo: git reset --hard 9569645 = em CASO de ERRO voltar a versão do código desejada
 git reflog = verificar o histórico de atualizações
 
+
+CONFIGURAR NOME E EMAIL NO GIT
+git config --global user.email "you@example.com" =  definir o email que mostrará nos commits
+git config --global user.name "Pedro Henrique..." = definir o nome do autor do commit
+git config --global --list = mostra o nome e email configurados no git
+
+
+BRANCH(Galho)
+git branch = ver as branch's disponíveis
+git branch "nome da branch (SEM AS ASPAS)"= criar uma nova branch
+git checkout "nome da branch (SEM AS ASPAS)" = mudar de branch
+jeito alternativo: git checkout -b "nome da branch nova (SEM AS ASPAS)" "nome da branch base (SEM AS ASPAS)"
+
+
+DEFINIR LINK DO PROJETO
+git remote add origin https://githug.com/...
+git push --set-upstream origin master
+
+
 ENVIAR OS CÓDIGOS PARA O GITHUB
 1° passo: git remote add origin "link do repositório" = definir para onde o código será enviado
 2° passo: git push = mandar as novas versões de código para o GitHub
 3° passo: git push --set-upstream origin master (FORÇAR PUSH: git push --force origin main)
+
+
+DESFAZER O ÚLTIMO COMMIT
+git rebase -i HEAD~1
+
+
+MERGE (Unir o código) Minutos do vídeo 1 = 33:40, exemplo do dia a dia (38:00)
+1° passo: Antes de fazer o merge, entrar na branch de onde será puxada as novas alterações e dar um --> git pull
+2° passo: entrar na branch que vai receber os códigos (caso ainda não esteja lá) com o comando --> git branch "nome da branch para onde os códigos serão puxados (SEM AS ASPAS)"
+3° passo: e usar o comando --> git merge "nome da branch com os códigos que serão puxados (SEM AS ASPAS)"
+
+
+GIT IGNORE (geralmente se faz logo no começo na branch master mesmo)
+touch .gitignore
+git merge --abort = abortar o merge
