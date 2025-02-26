@@ -1,0 +1,18 @@
+INSTALANDO ANGULAR/CLI -> 
+    npm install -g @angular/cli
+
+CRIANDO NOVO PROJETO VIA TERMINAL -> 
+    ng new
+
+RODAR O PROJETO -> 
+    npm run start (localhost:4200)
+
+CRIAR COMPONENTE -> 
+    ng generate component
+    forma reduzida -> ng g c
+    forma reduzida já colocando o nome no componente -> ng g c pasta/nome_arquivo. EXEMPLO: ng g c components/footer
+
+CRANDO UIM SERVICE (arquivo com as lógicas para requisições http) ->
+    ng generate service
+    forma reduzida -> ng g s
+    forma reduzida já colocando o nome no componente -> ng g s pasta/nome_arquivo. EXEMPLO: ng g s services/hello-world
