@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Gráfico SVG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .chart-container {
+            width: 800px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bar {
+            fill: #4caf50;
+            opacity: 0.7;
+        }
+
+        .min-line {
+            stroke: #002dff;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .max-line {
+            stroke: #27ae60;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .axis {
+            stroke: #333;
+            stroke-width: 1;
+        }
+
+        .tick {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exemplo Simples de Gráfico com Linhas Min/Max</h1>
+
+    <div class="chart-title">Recurso: Máquina 001</div>
+    <div class="chart-container" id="chart"></div>
+
+    <div>
+        <h2>Explicação:</h2>
+        <p>Este exemplo mostra:</p>
+        <ul>
+            <li>
+                Um gráfico SVG simples com barras representando períodos de tempo
+            </li>
+            <li>Linhas azuis representando valores mínimos</li>
+            <li>Linhas verdes representando valores máximos</li>
+            <li>Eixos X (tempo) e Y (valores)</li>
+        </ul>
+    </div>
+
+    <script>
+        // Dados de exemplo (simplificados)
+        const data = [
+            {
+                start: "2025-05-19 08:00:00",
+                end: "2025-05-19 17:00:00",
+                min: 1,
+                max: 10,
+                value: 5,
+            },
+            {
+                start: "2025-05-20 08:00:00",
+                end: "2025-05-20 17:00:00",
+                min: 0,
+                max: 0,
+                value: 0,
+            },
+            {
+                start: "2025-05-21 08:00:00",
+                end: "2025-05-21 17:00:00",
+                min: 2,
+                max: 8,
+                value: 4,
+            },
+            {
+                start: "2025-05-22 08:00:00",
+                end: "2025-05-22 17:00:00",
+                min: 1,
+                max: 5,
+                value: 3,
+            },
+        ];
+
+        // Configurações do gráfico
+        const margin = { top: 30, right: 30, bottom: 50, left: 50 };
+        const width = 800 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+
+        // Criar elemento SVG
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute(
+            "viewBox",
+            `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom
+            }`
+        );
+
+        // Grupo principal para o gráfico
+        const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        g.setAttribute("transform", `translate(${margin.left}, ${margin.top})`);
+        svg.appendChild(g);
+
+        // Adicionar SVG ao container
+        document.getElementById("chart").appendChild(svg);
+
+        // Processar datas
+        const parseTime = (d) => new Date(d.replace(" ", "T"));
+        const dates = data.map((d) => parseTime(d.start));
+        const minDate = new Date(Math.min(...dates));
+        const maxDate = new Date(Math.max(...data.map((d) => parseTime(d.end))));
+
+        // Escalas
+        const xScale = (date) => {
+            const time = date.getTime() - minDate.getTime();
+            const totalTime = maxDate.getTime() - minDate.getTime();
+            return (time / totalTime) * width;
+        };
+
+        // Encontrar o valor máximo para escala Y
+        const maxValue = Math.max(...data.map((d) => d.max), 10);
+        const yScale = (value) => height - (value / maxValue) * height;
+
+        // Desenhar eixos
+        function drawAxes() {
+            // Eixo X
+            const xAxis = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "line"
+            );
+            xAxis.setAttribute("x1", 0);
+            xAxis.setAttribute("y1", height);
+            xAxis.setAttribute("x2", width);
+            xAxis.setAttribute("y2", height);
+            xAxis.setAttribute("class", "axis");
+            g.appendChild(xAxis);
+
+            // Eixo Y
+            const yAxis = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "line"
+            );
+            yAxis.setAttribute("x1", 0);
+            yAxis.setAttribute("y1", 0);
+            yAxis.setAttribute("x2", 0);
+            yAxis.setAttribute("y2", height);
+            yAxis.setAttribute("class", "axis");
+            g.appendChild(yAxis);
+
+            // Marcadores do eixo Y
+            for (let i = 0; i <= maxValue; i += 2) {
+                const y = yScale(i);
+
+                // Linha de grade
+                const gridLine = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "line"
+                );
+                gridLine.setAttribute("x1", 0);
+                gridLine.setAttribute("y1", y);
+                gridLine.setAttribute("x2", width);
+                gridLine.setAttribute("y2", y);
+                gridLine.setAttribute("stroke", "#eee");
+                g.appendChild(gridLine);
+
+                // Texto do valor
+                const text = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "text"
+                );
+                text.setAttribute("x", -10);
+                text.setAttribute("y", y + 4);
+                text.setAttribute("text-anchor", "end");
+                text.setAttribute("class", "tick");
+                text.textContent = i;
+                g.appendChild(text);
+            }
+
+            // Marcadores do eixo X (datas)
+            data.forEach((d, i) => {
+                const x =
+                    xScale(parseTime(d.start)) +
+                    (xScale(parseTime(d.end)) - xScale(parseTime(d.start))) / 2;
+                const text = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "text"
+                );
+                text.setAttribute("x", x);
+                text.setAttribute("y", height + 20);
+                text.setAttribute("text-anchor", "middle");
+                text.setAttribute("class", "tick");
+                text.textContent = d.start
+                    .split(" ")[0]
+                    .split("-")
+                    .reverse()
+                    .join("/");
+                g.appendChild(text);
+            });
+        }
+
+        // Desenhar barras
+        function drawBars() {
+            data.forEach((d) => {
+                const startX = xScale(parseTime(d.start));
+                const endX = xScale(parseTime(d.end));
+                const barWidth = endX - startX;
+                const barHeight = yScale(0) - yScale(d.value || 0);
+
+                const bar = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "rect"
+                );
+                bar.setAttribute("x", startX);
+                bar.setAttribute("y", yScale(d.value || 0));
+                bar.setAttribute("width", barWidth);
+                bar.setAttribute("height", barHeight);
+                bar.setAttribute("class", "bar");
+                g.appendChild(bar);
+            });
+        }
+
+        // Desenhar linhas min/max
+        function drawMinMaxLines() {
+            let minPath = `M0,${yScale(0)}`;
+            let maxPath = `M0,${yScale(0)}`;
+
+            data.forEach((d, i) => {
+                const startX = xScale(parseTime(d.start));
+                const endX = xScale(parseTime(d.end));
+
+                // Conectar ao ponto anterior
+                if (i > 0) {
+                    const prevEndX = xScale(parseTime(data[i - 1].end));
+                    minPath += ` L${prevEndX},${yScale(0)} L${startX},${yScale(0)}`;
+                    maxPath += ` L${prevEndX},${yScale(0)} L${startX},${yScale(0)}`;
+                }
+
+                // Adicionar segmentos min/max
+                if (typeof d.min === "number") {
+                    minPath += ` L${startX},${yScale(d.min)} L${endX},${yScale(d.min)}`;
+                }
+                if (typeof d.max === "number") {
+                    maxPath += ` L${startX},${yScale(d.max)} L${endX},${yScale(d.max)}`;
+                }
+            });
+
+            // Finalizar no último ponto
+            minPath += ` L${xScale(parseTime(data[data.length - 1].end))},${yScale(
+                0
+            )} L${width},${yScale(0)}`;
+            maxPath += ` L${xScale(parseTime(data[data.length - 1].end))},${yScale(
+                0
+            )} L${width},${yScale(0)}`;
+
+            // Criar elementos path
+            const minLine = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "path"
+            );
+            minLine.setAttribute("d", minPath);
+            minLine.setAttribute("class", "min-line");
+            g.appendChild(minLine);
+
+            const maxLine = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "path"
+            );
+            maxLine.setAttribute("d", maxPath);
+            maxLine.setAttribute("class", "max-line");
+            g.appendChild(maxLine);
+        }
+
+        // Inicializar gráfico
+        drawAxes();
+        drawBars();
+        drawMinMaxLines();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+1 - Definir os dados
+Você começa criando um array de objetos com as informações que deseja exibir (datas, valores, min, max, etc).
+
+2 - Configurar dimensões e margens
+Define o tamanho do gráfico, margens e área útil para desenhar.
+
+3 - Criar o elemento SVG
+Usa document.createElementNS para criar o <svg> e define o viewBox para controlar o sistema de coordenadas.
+
+4 - Adicionar um grupo principal (<g>)
+Cria um grupo <g> para aplicar transformações (como margens) e facilitar o posicionamento dos elementos internos.
+
+5 - Adicionar o SVG ao HTML
+Insere o SVG criado dentro de um container na página.
+
+6 - Criar escalas de conversão
+Define funções para converter valores dos dados (datas e valores numéricos) em posições no SVG.
+
+7 - Desenhar os eixos
+Cria linhas e textos para os eixos X e Y, incluindo marcadores (ticks) e rótulos.
+
+8 - Desenhar as barras
+Para cada item de dados, desenha um <rect> representando a barra do gráfico.
+
+9 - Desenhar linhas min/max
+Cria <path> para desenhar as linhas que representam os valores mínimos e máximos ao longo do tempo.
+
+10 - Finalizar e exibir
+Chama as funções de desenho na ordem correta para montar o gráfico completo.
