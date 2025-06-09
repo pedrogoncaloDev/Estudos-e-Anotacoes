@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Vermelha + Azul (altura dinâmica)</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            
+            html,
+            body {
+                height: 100%;
+            }
+
+            /* Deixa o body em coluna flexível */
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Vermelha ─ altura fixa */
+            .vermelha {
+                height: 200px;
+                background: crimson;
+            }
+
+            /* Azul ─ preenche o resto */
+            .azul {
+                flex: 1;
+                background: dodgerblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="vermelha"></div>
+        <div class="azul"></div>
+    </body>
+</html>
