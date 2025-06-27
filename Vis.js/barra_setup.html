@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vis-timeline – 3 barras coladas</title>
+
+    <link href="https://unpkg.com/vis-timeline@latest/dist/vis-timeline-graph2d.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/vis-timeline@latest/dist/vis-timeline-graph2d.min.js"></script>
+
+    <style>
+        #visualization {
+            height: 120px;
+            border: 1px solid #aaa;
+        }
+
+        .order-green {
+            background: #28a745 !important;
+            border-color: #28a745 !important;
+            color: #fff;
+        }
+
+        .setup-black {
+            background: #000 !important;
+            border-color: #000 !important;
+            color: #fff;
+        }
+
+        /* tira qualquer “vão” entre itens seguidos */
+        .vis-item {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .setup-black.vis-item{
+            height:50%  !important;   /* só metade da altura da linha */
+            top:25%     !important;   /* 25 % + 50 % = centralizada */
+            display:flex;             /* deixa o texto no centro da caixinha */
+            align-items:center;
+            justify-content:center;
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="visualization"></div>
+
+    <script>
+        const todayAt = (h, m = 0) => { const d = new Date(); d.setHours(h, m, 0, 0); return d };
+
+        const items = new vis.DataSet([
+            { id: 1, group: 1, start: todayAt(8), end: todayAt(11), className: 'order-green',  },
+            { id: 2, group: 1, start: todayAt(11), end: todayAt(15), className: 'setup-black', title: 'Setup 11→15' },
+            { id: 3, group: 1, start: todayAt(15), end: todayAt(17), className: 'order-green', }
+        ]);
+
+        const groups = new vis.DataSet([{ id: 1, content: '' }]);
+
+        new vis.Timeline(
+            document.getElementById('visualization'),
+            items,
+            groups,
+            {
+                stack: false,
+                margin: { item: 0 },
+                selectable: false,
+                multiselect: false,
+                zoomKey: 'ctrlKey'
+            }
+        );
+    </script>
+</body>
+
+</html>
