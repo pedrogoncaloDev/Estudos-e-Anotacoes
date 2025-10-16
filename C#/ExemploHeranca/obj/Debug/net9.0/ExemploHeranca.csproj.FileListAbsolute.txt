@@ -1,0 +1,15 @@
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\bin\Debug\net9.0\ExemploHeranca.exe
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\bin\Debug\net9.0\ExemploHeranca.deps.json
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\bin\Debug\net9.0\ExemploHeranca.runtimeconfig.json
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\bin\Debug\net9.0\ExemploHeranca.dll
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\bin\Debug\net9.0\ExemploHeranca.pdb
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.sourcelink.json
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.dll
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\refint\ExemploHeranca.dll
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.pdb
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ExemploHeranca.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploHeranca\obj\Debug\net9.0\ref\ExemploHeranca.dll

@@ -1,0 +1,15 @@
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\bin\Debug\net9.0\ExemploPolimorfismo.exe
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\bin\Debug\net9.0\ExemploPolimorfismo.deps.json
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\bin\Debug\net9.0\ExemploPolimorfismo.runtimeconfig.json
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\bin\Debug\net9.0\ExemploPolimorfismo.dll
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\bin\Debug\net9.0\ExemploPolimorfismo.pdb
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.sourcelink.json
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.dll
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\refint\ExemploPolimorfismo.dll
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.pdb
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ExemploPolimorfismo.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\GitHub\Estudos-e-Anotacoes\C#\ExemploPolimorfismo\obj\Debug\net9.0\ref\ExemploPolimorfismo.dll
