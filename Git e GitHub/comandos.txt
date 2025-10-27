@@ -59,3 +59,10 @@ MERGE (Unir o código) Minutos do vídeo 1 = 33:40, exemplo do dia a dia (38:00)
 GIT IGNORE (geralmente se faz logo no começo na branch master mesmo)
 touch .gitignore
 git merge --abort = abortar o merge
+
+GERAR CHAVE SSH
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+COPIAR CHAVE PUBLICA
+cat /opt/frappe/.ssh/id_ed25519.pub
+
