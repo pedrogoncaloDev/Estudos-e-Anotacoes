@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "name": "João Silva",
+      "age": 28,
+      "email": "joao.silva@email.com",
+      "id": 1
+    },
+    {
+      "name": "Maria Souza",
+      "age": 34,
+      "email": "maria.souza@email.com",
+      "id": 2
+    }
+  ]
+}

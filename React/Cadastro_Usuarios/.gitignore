@@ -1,0 +1,31 @@
+# Dependências
+*node_modules/
+
+# Build
+front_end/build
+front_end/dist
+
+# Variáveis de ambiente
+front_end/.env
+front_end/.env.local
+front_end/.env.production.local
+
+# Logs
+front_end/npm-debug.log*
+front_end/yarn-debug.log*
+front_end/yarn-error.log*
+
+# IDE
+front_end/.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Cache
+.eslintcache
+.parcel-cache
+.cache
