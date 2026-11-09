@@ -1,0 +1,18 @@
+# Saída de build
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+publish/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.DotSettings.user
+
+# NuGet / testes
+*.nupkg
+TestResults/
