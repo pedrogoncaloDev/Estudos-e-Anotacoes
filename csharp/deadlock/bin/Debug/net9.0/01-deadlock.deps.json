@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "01-deadlock/1.0.0": {
+        "runtime": {
+          "01-deadlock.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "01-deadlock/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
