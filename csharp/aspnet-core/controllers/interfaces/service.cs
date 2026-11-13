@@ -1,6 +1,6 @@
 namespace controllers.Interfaces;
 
-public interface IUserService
+public interface IService
 {
     string GetAll();
 	

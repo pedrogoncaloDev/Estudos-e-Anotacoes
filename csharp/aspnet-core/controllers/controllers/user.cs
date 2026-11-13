@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace controllers.Controllers;
 
 [ApiController]
-public class UserController(IUserService userService) : ControllerBase
+public class UserController(IService service) : ControllerBase
 {
 	[HttpGet("users")]
-	public IActionResult GetAll() => Ok(userService.GetAll());
+	public IActionResult GetAll() => Ok(service.GetAll());
 	
 	[HttpGet("user/{id}")]
-	public IActionResult GetById(int id) => Ok(userService.GetById(id));
+	public IActionResult GetById(int id) => Ok(service.GetById(id));
 }

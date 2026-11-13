@@ -1,12 +1,15 @@
+using controllers.Controllers;
 using controllers.Interfaces;
-using controllers.Services;
+using controllers.UserService;
+using controllers.CompanyService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();                      // .NET 9+
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IService, UserService>();
+builder.Services.AddScoped<IService, CompanyService>();
 
 var app = builder.Build();
 
